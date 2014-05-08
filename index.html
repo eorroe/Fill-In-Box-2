@@ -103,8 +103,8 @@ game = {
 
     //DRAW MAINMENU
     mainMenu: function(){
-        if(sessionStorage.highScore){
-            canvas.drawCenteredText("70px impact", sessionStorage.name + " HIGH SCORE: " + sessionStorage.highScore, can, sessionStorage.color, 0, 5);
+        if(sessionStorage.highScore2){
+            canvas.drawCenteredText("70px impact", sessionStorage.name + " HIGH SCORE: " + sessionStorage.highScore2, can, sessionStorage.color, 0, 5);
         };
         font = "100px impact";
         canvas.drawCenteredText(font, "Fill In Box 2", can, 'black', 0, 2.7);
@@ -116,8 +116,8 @@ game = {
         window.onkeydown = null;
         canvas.clear();
         //SAVE HIGH SCORES
-        if(sessionStorage.highScore){
-            if(player.score > sessionStorage.highScore){
+        if(sessionStorage.highScore2){
+            if(player.score > sessionStorage.highScore2){
                 this.outputNewHighscore();
             } else {
                 canvas.drawCenteredText("150px impact", "GAME OVER!!!", can, player.color, 0, 2);
@@ -133,9 +133,9 @@ game = {
     },
 
     outputNewHighscore: function(){
-        sessionStorage.highScore = player.score;
+        sessionStorage.highScore2 = player.score;
         sessionStorage.color = player.color;
-        canvas.drawCenteredText("80px impact", "NEW HIGH SCORE!!! " + sessionStorage.highScore, can, player.color, 0, 2);
+        canvas.drawCenteredText("80px impact", "NEW HIGH SCORE!!! " + sessionStorage.highScore2, can, player.color, 0, 2);
         sessionStorage.color = player.color;
         sessionStorage.name = prompt("Enter your name to save HIGH SCORE: ").toUpperCase();
     },
